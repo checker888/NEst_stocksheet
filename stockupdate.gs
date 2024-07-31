@@ -1,3 +1,14 @@
+function firestoreData() {
+  //jsonファイルのemail、key、projectIdを読み込み、returnで返す
+  const prop = PropertiesService.getScriptProperties().getProperties();
+  const dataArray = {
+    "email":prop.FIRESTORE_EMAIL,
+    "key": prop.FIRESTORE_KEY,
+    "projectId": prop.FIRESTORE_ID
+  }
+  return dataArray;
+}
+
 function start() {
   //実行時にポップアップを表示する
   let result = Browser.msgBox('在庫を更新してよろしいですか？', Browser.Buttons.OK_CANCEL);
